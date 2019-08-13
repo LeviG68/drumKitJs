@@ -4,7 +4,7 @@ Drum kit will different sounds
 *(https://levig68.github.io/drumKitJs/.)*
 
 Inline-style: 
-![alt text](https://levig68.github.io/drumKitJs/ "App screen shot")
+![alt text](<img width="1278" alt="Screen Shot 2019-08-13 at 2 52 33 PM" src="https://user-images.githubusercontent.com/17188105/62976625-40408080-bdda-11e9-9978-5dbf0eada8ed.png">)
 
 
 ### Built with 
