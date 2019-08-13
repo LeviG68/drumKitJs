@@ -3,6 +3,10 @@ Drum kit will different sounds
 
 *(https://levig68.github.io/drumKitJs/.)*
 
+Inline-style: 
+![alt text](https://levig68.github.io/drumKitJs/ "App screen shot")
+
+
 ### Built with 
 1. JavaScript
 2. CSS

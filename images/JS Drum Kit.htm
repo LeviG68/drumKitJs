@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://levig68.github.io/drumKitJs/ -->
+<html lang="en" data-lt-installed="true" class="gr__levig68_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="./JS Drum Kit_files/style.css">
+</head>
+<body data-gr-c-s-loaded="true">
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">Gesundheit</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">Baby Laugh</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">Bitting</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">Cough</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">Hiccups</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">Big Kiss</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">Snore</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">Darth Vader</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">Yawn</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/atchoum.wav"></audio>
+  <audio data-key="83" src="sounds/babylaugh.wav"></audio>
+  <audio data-key="68" src="sounds/BITE.wav"></audio>
+  <audio data-key="70" src="sounds/cough4.wav"></audio>
+  <audio data-key="71" src="sounds/hic3.wav"></audio>
+  <audio data-key="72" src="sounds/kiss_up.wav"></audio>
+  <audio data-key="74" src="sounds/snore2.wav"></audio>
+  <audio data-key="75" src="sounds/vader.wav"></audio>
+  <audio data-key="76" src="sounds/YAWN.wav"></audio>
+
+<script>
+
+function playSound(e){
+  const audio= document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if(!audio) return; // stop function from running all together!!
+  audio.currentTime= 0; // rewind to start of audio file
+  audio.play();
+  key.classList.add('playing');
+  
+}
+
+function removeTransition(e) {
+  if(e.propertyName != 'transform') return;  // skips it fi it not a transform
+  this.classList.remove('playing');
+}
+
+const keys= document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+window.addEventListener('keydown', playSound);
+
+</script>
+
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
